@@ -5,6 +5,8 @@ defmodule Maptex do
   Documentation for `Maptex`.
   """
 
+  @spec to_map(map(), map()) :: result_t()
+
   def to_map(schema, source_map) do
 	for {k, v} <- schema, into: %{}, do: {k, fetch(source_map, v)}
   end
